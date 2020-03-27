@@ -1,0 +1,22 @@
+{
+  "name": "flappy-bird",
+  "version": "1.0.0",
+  "description": "Flappy Bird game implementation in JavaScript.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ortalll20111/flappy-bird.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ortalll20111/flappy-bird/issues"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "homepage": "https://github.com/ortalll20111/flappy-bird#readme",
+  "devDependencies": {
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.8.3"
+  }
+}
