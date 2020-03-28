@@ -12,7 +12,8 @@
     "url": "https://github.com/ortalll20111/flappy-bird/issues"
   },
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "serve": "tsc --watch"
   },
   "homepage": "https://github.com/ortalll20111/flappy-bird#readme",
   "devDependencies": {
