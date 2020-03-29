@@ -29,6 +29,13 @@ const gravity = 1.5;
 const JUMP = 30;
 
 let gameIsOver = false;
+ let score : number;
+
+ let fly = new Audio();
+ fly.src = "sounds/fly.mp3";
+
+ let scor = new  Audio();
+scor.src = "sounds/score.mp3";
 
 type Pipe = {
     x: number,
@@ -42,6 +49,7 @@ function canvasClicked(): void {
         init();
     } else {
         birdJump();
+        fly.play();
     }
 }
 
@@ -61,6 +69,7 @@ function init() {
     gameIsOver = false;
     birdX = 10;
     birdY = 150;
+    score = 0;
 
     pushNewPipe();
 
@@ -81,6 +90,10 @@ function draw() {
         if (isPipeCrossed100Px(pipe)) {
             pushNewPipe();
         }
+
+        if(pipeIsEgual5(pipe)){
+            growScore();
+        }
     });
 
     context.drawImage(birdEl, birdX, birdY);
@@ -94,9 +107,22 @@ function draw() {
         gameOver();
     }
 
+    context.fillStyle = "#000";
+    context.font = "20px Verdana";
+    context.fillText("Score : " + score, 10, canvasEl.height- 20);
+
     if (!gameIsOver) {
         requestAnimationFrame(draw);
     }
+}
+
+function pipeIsEgual5(pipe : Pipe): boolean {
+    return pipe.x === 5;
+}
+
+function growScore(): void {
+    score++;
+    scor.play();
 }
 
 function drawPipe(pipe: Pipe): void {
